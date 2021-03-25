@@ -27,14 +27,10 @@
         margin-left: 18px;
         color: #00000035;
         text-decoration: none;
-
-      }
-      a:hover{
-        color:#000000e9;
-      }
-      a:active{
-        color: #000000e9;
-        font-weight: 500;
+        &:hover, &:active{
+          color:#000000e9;
+          font-weight: 500;
+        }
       }
       button{
         background-color: #FFB500;
@@ -44,12 +40,12 @@
         height: 50px;
         width: 137px;
         margin-left: 18px;
-      }
-      button:hover{
-        color:#292929e9;
+        &:hover{
+          color:#292929e9;
+          background-color: #ffa200;
+        }
       }
     }
   }
-
 }
 

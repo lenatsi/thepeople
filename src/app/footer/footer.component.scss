@@ -1,14 +1,18 @@
-
 .footer {
   width: 100%;
   text-align: center;
-  display:flex;
+  display: flex;
   justify-content: center;
   vertical-align: bottom;
   margin-top: 79px;
-  p {
+  a {
     margin-right: 18px;
     margin-left: 18px;
     color: #465274;
+    font-weight: 300;
+    text-decoration: none;
+    &:hover,&:active {
+      font-weight: 400;
+    }
   }
 }

@@ -12,15 +12,29 @@
       width: 40%;
       align-self: center;
       text-align: left;
+      img{
+        height: 23px;
+        width: auto;
+      }
     }
     .rightPart {
       width: 60%;
       text-align: right;
       font-family: "Roboto";
-      p {
+      a {
         display: inline;
         margin-right: 18px;
         margin-left: 18px;
+        color: #00000035;
+        text-decoration: none;
+
+      }
+      a:hover{
+        color:#000000e9;
+      }
+      a:active{
+        color: #000000e9;
+        font-weight: 500;
       }
       button{
         background-color: #FFB500;
@@ -30,6 +44,9 @@
         height: 50px;
         width: 137px;
         margin-left: 18px;
+      }
+      button:hover{
+        color:#292929e9;
       }
     }
   }

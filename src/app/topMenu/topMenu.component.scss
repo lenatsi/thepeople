@@ -1,0 +1,38 @@
+.menuPrincipal{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .row {
+    width:985px;
+    display: flex;
+    padding-top: 13px;
+    margin-top: 13px;
+    margin-bottom: 66px;
+    .leftPart {
+      width: 40%;
+      align-self: center;
+      text-align: left;
+    }
+    .rightPart {
+      width: 60%;
+      text-align: right;
+      font-family: "Roboto";
+      p {
+        display: inline;
+        margin-right: 18px;
+        margin-left: 18px;
+      }
+      button{
+        background-color: #FFB500;
+        box-shadow:0px 5px 15px 0px #ffa20064 ;
+        border-radius: 15px;
+        border: none;
+        height: 50px;
+        width: 137px;
+        margin-left: 18px;
+      }
+    }
+  }
+
+}
+

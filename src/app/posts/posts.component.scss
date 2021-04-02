@@ -1,0 +1,37 @@
+.box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .searchFilter{
+    width: 985px;
+    display: flex;
+    padding: 15px;
+    .card{
+      width: 277px;
+      margin: 20px;
+      display: block;
+      padding: 0px;
+      .img{
+        width: 300px;
+        height: 228px;
+        margin:-15px -15px 0px -15px;
+        overflow: hidden;
+        z-index: 1;
+        img{
+          max-width: 100%;
+        }
+      }
+      .card-body{
+        height:136px;
+        padding: 10px;
+      }
+    }
+  }
+}
+.card-header-second{
+	box-shadow:1px 7px 15px #a2a2a2;
+    margin:-25px -25px 0px -25px;
+    height: 120px;
+	background: linear-gradient(-90deg, #8E2DE2, #4A00E0);
+}

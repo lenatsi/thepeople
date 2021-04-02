@@ -1,5 +1,18 @@
-<div class="row">
-  <div class="col-4">
-    
+<div class="box">
+  <div class="searchFilter">
+  <div class="row row-cols-md-3 g-4">
+      <div class="card" *ngFor="let post of posts">
+        <div class="img card-img-top">
+          <img src="{{post.imgUrl}}" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.date}}</p>
+          <a class="btn btn-burnt-orange" href="">{{post.profession}}</a>
+        </div>
+      </div>
+      
   </div>
+
 </div>
+

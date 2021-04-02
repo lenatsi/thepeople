@@ -1,8 +1,9 @@
+@import "../../styles.scss";
+
 .box{
   width: 100%;
   display: flex;
   justify-content: center;
-
   .searchFilter{
     width: 985px;
     display: flex;
@@ -29,9 +30,57 @@
     }
   }
 }
-.card-header-second{
-	box-shadow:1px 7px 15px #a2a2a2;
-    margin:-25px -25px 0px -25px;
-    height: 120px;
-	background: linear-gradient(-90deg, #8E2DE2, #4A00E0);
+.sections{
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 44px;
+  box-shadow: 0px 2px 15px 0px #00000019;;
+  .Filter{
+    height:132px;
+    width: 985px;
+    display: flex;
+    justify-content: center;
+    .main-row{
+      height:132px;
+      .left{
+        margin-right: 10px;
+        input{
+          border-radius: 13px;
+          border:none;
+          outline: none;
+          background-color: #67638b1c;
+          &:focus {
+            box-shadow: none;
+            outline: none;
+            border:none;
+          }
+        }
+
+      }
+      .first-row{
+        height: 19px;
+        margin-top: 24px;
+        color: #00000035;
+      }
+      .second-row{
+        height: 59px;
+        width: 345px;
+        margin-top: 5px;
+        .picker{
+          height: 59px;
+          border-radius: 13px;
+          background-color: #67638b1c;
+          input{
+            &:focus {
+              box-shadow: none;
+              outline: none;
+            }
+        }
+        }
+      }
+    }
+  }
 }
+

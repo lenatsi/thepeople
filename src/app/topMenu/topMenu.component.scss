@@ -27,7 +27,11 @@
         margin-left: 18px;
         color: #00000035;
         text-decoration: none;
-        &:hover, &:active{
+        &:hover{
+          color:#000000e9;
+          font-weight: 500;
+        }
+        &:active{
           color:#000000e9;
           font-weight: 500;
         }

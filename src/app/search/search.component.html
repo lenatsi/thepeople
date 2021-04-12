@@ -1,2 +1,52 @@
 
-<app-posts></app-posts>
+<!-- <app-posts></app-posts> -->
+
+<div class="sections">
+  <div class="Filter">
+    <div class="row main-row">
+      <div class="col left">
+        <div class="row first-row">
+          <p>Busca por nombre y apellido</p>
+        </div>
+        <div class="row second-row">
+            <input type="text" class="form-control"  name="filterPost" placeholder="Bill Gates">
+        </div>
+      </div>
+      <div class="col right">
+        <div class="row first-row">
+          <p>Fecha de nacimiento</p>
+        </div>
+        <div class="row second-row">
+          <mat-form-field  class="picker">
+            <mat-label></mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate (dateChange)="startChange($event)" placeholder="Fecha inicio" name="filterDate">
+              <input matEndDate (dateChange)="endChange($event)"placeholder="Fecha fin">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <div *ngFor="let item of allPersons" class="col-sm-6 col-md-4 col-lg-3">
+            <div class="box-card">
+                <div class="box-img" [ngStyle]="{'background-image': 'url('+item.photo+')' }"></div>
+                <div class="box-data">
+                    <h2>{{item.name}}</h2>
+                    <p class="date">{{item.birthdate}}</p>
+                    <p class="ptag">{{item.job}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

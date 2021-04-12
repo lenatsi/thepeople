@@ -1,11 +1,11 @@
-<div class="menuPrincipal">
+<div class="menuPrincipal" [ngClass]="{'white':bgWhite}">
   <div class="row">
     <div class="leftPart">
       <img src="../../assets/img/thepeople.svg" alt="logo" />
     </div>
     <div class="rightPart">
-      <a routerLink="/">Inicio</a>
-      <a routerLink="/search">Búsqueda</a>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+      <a routerLink="/search" routerLinkActive="active">Búsqueda</a>
       <button type="button" class="btn btn-success">Subir nuevo</button>
     </div>
   </div>

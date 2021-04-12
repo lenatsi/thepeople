@@ -1,0 +1,97 @@
+.sections {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  margin-top: 1px;
+  margin-bottom: 44px;
+  box-shadow: 0px 2px 3px 0px #00000019;
+  .Filter {
+    height: 132px;
+    width: 985px;
+    display: flex;
+    justify-content: center;
+    .main-row {
+      height: 132px;
+      .left {
+        margin-right: 10px;
+          input {
+            border-radius: 13px;
+            border: none;
+            outline: none;
+            background-color: #67638b1c;
+            font-size: 16px;
+            padding: 16px 10px 16px;
+            &:focus {
+              box-shadow: none;
+              outline: none;
+              border: none;
+            }
+          }
+        }
+      .first-row {
+        height: 19px;
+        margin-top: 24px;
+        color: #00000035;
+      }
+      .second-row {
+        height: 59px;
+        width: 345px;
+        margin-top: 5px;
+        .picker {
+          height: 59px;
+          border-radius: 13px;
+          background-color: #67638b1c;
+          input {
+            &:focus {
+              box-shadow: none;
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.box-card {
+  padding: 10px;
+  display: flow-root;
+  position: relative;
+  .box-data {
+      background: #FFFFFF;
+      box-shadow: 0px 2px 18px rgba(73, 73, 98, 0.170325);
+      border-radius: 8px;
+      padding: 15px;
+      margin: 0 10px;
+      h2 {
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 28px;
+          color: #000000;
+          margin-top: 20px;
+      }
+      .date {
+          font-size: 14px;
+          line-height: 16px;
+          color: #000000;
+      }
+      .ptag {
+          background: #000000;
+          border-radius: 18.5px;
+          color: white;
+          padding: 5px 13px;
+          display: inline-block;
+          margin: 0;
+      }
+  }
+  .box-img {
+      background-position: center center;
+      background-size: cover;
+      height: 200px;
+      border-radius: 8px;
+      position: relative;
+      margin-bottom: -16px;
+  }
+}

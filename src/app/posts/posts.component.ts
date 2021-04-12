@@ -8,6 +8,7 @@ export class PostsComponent implements OnInit {
 
   constructor() { }
   filterPost ='';
+  filterDate = '';
   posts = [
     {
       "title": "Bill Gates",

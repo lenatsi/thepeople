@@ -17,7 +17,7 @@
           <mat-form-field  class="picker">
             <mat-label></mat-label>
             <mat-date-range-input [rangePicker]="picker">
-              <input matStartDate placeholder="Fecha inicio">
+              <input matStartDate placeholder="Fecha inicio" name="filterDate" [(ngModel)]='filterDate'>
               <input matEndDate placeholder="Fecha fin">
             </mat-date-range-input>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -40,7 +40,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ post.title }}</h5>
           <p class="card-text">{{ post.date }}</p>
-          <a class="btn btn-burnt-orange" href="">{{ post.profession }}</a>
+          <a class="btn" href="">{{ post.profession }}</a>
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ import { DetailComponent } from './detail/detail.component'
 import { NotFoundComponent } from './notFound/notFound.component'
 import { FilterPipe } from './pipes/filter.pipe'
 import { PostsComponent } from './posts/posts.component'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
@@ -48,7 +48,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations'
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { NotifierModule } from 'angular-notifier';
 
 
 @NgModule({
@@ -62,7 +65,9 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations'
     NotFoundComponent,
     FilterPipe,
     PostsComponent,
-  ],
+      LoginComponent,
+      RegisterComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -104,7 +109,9 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations'
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    NotifierModule,
   ],
   exports: [
     MatDatepickerModule,

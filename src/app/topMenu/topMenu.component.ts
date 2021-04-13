@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopMenuComponent implements OnInit {
   bgWhite = false
+  visible = false
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -17,6 +18,15 @@ export class TopMenuComponent implements OnInit {
           this.bgWhite =false
         } else{
           this.bgWhite = true
+        }
+      }
+    })
+    this.router.events.subscribe( route => {
+      if (route instanceof NavigationEnd){
+        if(route.url !== "/login" && route.url !== "/register"){
+          this.visible =false
+        } else{
+          this.visible = true
         }
       }
     })

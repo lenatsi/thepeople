@@ -1,3 +1,5 @@
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './notFound/notFound.component';
 import { DetailComponent } from './detail/detail.component';
 import { SearchComponent } from './search/search.component';
@@ -9,8 +11,10 @@ const routes: Routes = [
   {path: "", component: HomePageComponent, pathMatch: "full"},
   {path: "404", component: NotFoundComponent},
   {path: "search", component: SearchComponent, pathMatch: "full"},
-  {path: "detail/:id", component: DetailComponent}
-  //{path: "**", redirectTo: "/404"},
+  {path: "detail/:id", component: DetailComponent},
+  { path: "login", component: LoginComponent },
+  { path: "register", component: RegisterComponent },
+  {path: "**", redirectTo: "/404"},
 ];
 
 @NgModule({

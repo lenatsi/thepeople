@@ -1,4 +1,4 @@
-<div class="menuPrincipal" [ngClass]="{'white':bgWhite}">
+<div class="menuPrincipal" [ngClass]="{'white':bgWhite, 'visible':visible}">
   <div class="row">
     <div class="leftPart">
       <img src="../../assets/img/thepeople.svg" alt="logo" />
@@ -6,7 +6,7 @@
     <div class="rightPart">
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
       <a routerLink="/search" routerLinkActive="active">Búsqueda</a>
-      <button type="button" class="btn btn-success">Subir nuevo</button>
+      <button type="button" routerLink="/login" routerLinkActive="active"class="btn btn-success">Subir nuevo</button>
     </div>
   </div>
 </div>

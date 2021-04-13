@@ -1,8 +1,8 @@
 export class Person {
-  bio: String
-  name: String
-  birthdate: String
-  photo: String
-  job: String
-  _id: String
+  bio: string
+  name: string
+  birthdate: string
+  photo: string
+  job: string
+  id: string
 }

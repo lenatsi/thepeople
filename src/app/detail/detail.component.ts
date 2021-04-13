@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,6 +11,7 @@ export class DetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

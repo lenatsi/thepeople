@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: "", component: HomePageComponent, pathMatch: "full"},
   {path: "404", component: NotFoundComponent},
   {path: "search", component: SearchComponent, pathMatch: "full"},
-  {path: "detail", component: DetailComponent, pathMatch: "full"},
+  {path: "detail/:id", component: DetailComponent}
   //{path: "**", redirectTo: "/404"},
 ];
 

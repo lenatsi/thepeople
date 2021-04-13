@@ -5,6 +5,9 @@
 }
 body{
   background-color: #F4F6F7;
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    height: 0px;
+}
 }
 $colorYellow: #FFB500;
 $colorShadow:#ffa20064;

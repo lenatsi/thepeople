@@ -1,4 +1,8 @@
+@import "../../styles.scss";
+
+
 .login-box{
+  font-family: 'Roboto';
   width: 100%;
   height: 100%;
   display: flex;
@@ -7,5 +11,14 @@
   .form-signin{
     width: 300px;
     height: fit-content;
+  }
+  button.Submit{
+    background-color: $colorYellow;
+    border: none;
+  }
+  button.mt-3{
+    text-decoration: none;
+    color: rgba(0, 102, 255, 0.475);
+    font-size: 16px;
   }
 }

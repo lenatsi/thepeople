@@ -1,20 +1,79 @@
-import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
+import { Component, OnInit } from '@angular/core'
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { NotifierService } from 'angular-notifier'
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
+  mForm: FormGroup
+  isSend = false
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private fb: FormBuilder,
+    private notifierService: NotifierService,
+  ) {
+    this.mForm = this.fb.group({
+      password: ['', [Validators.required, Validators.minLength(6)], (control) => this.validatePasswords(control, 'password') ],
+      passwordRepeat: ['', [Validators.required, (control) => this.validatePasswords(control, 'passwordRepeat') ]  ],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,8}$'),
+        ],
+      ],
+      name: ['', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z]+$')]]
+    })
+  }
+  ngOnInit() {}
+  get password(): AbstractControl {
+    return this.mForm.get('password');
+  }
 
-  ngOnInit() {
+  get passwordRepeat(): AbstractControl {
+    return this.mForm.get('passwordRepeat');
+  }
+  validatePasswords(control: AbstractControl, name: string) {
+    if (this.mForm === undefined || this.password.value === '' || this.passwordRepeat.value === '') {
+      return null;
+    } else if (this.password.value === this.passwordRepeat.value) {
+      if (name === 'password1' && this.passwordRepeat.hasError('passwordMismatch')) {
+        this.password.setErrors(null);
+        this.passwordRepeat.updateValueAndValidity();
+      } else if (name === 'password2' && this.password.hasError('passwordMismatch')) {
+        this.passwordRepeat.setErrors(null);
+        this.password.updateValueAndValidity();
+      }
+      return null;
+    } else {
+      return {'passwordMismatch': { value: 'The provided passwords do not match'}};
+    }
+  }
+  get f() {
+    return this.mForm.controls
+  }
+
+  onSave() {
+    this.isSend = true
+    console.log('Guardar!!', this.mForm)
+
+    if (this.mForm.invalid) {
+      console.error('El formulario NO es válido')
+      return
+    }
+
+    console.log('El formulario es válido')
+    // Atacar a API
+
+    this.notifierService.notify('success', 'Datos actualizados')
   }
 
   login() {
-    this.router.navigate(["/login"])
+    this.router.navigate(['/login'])
   }
-
 }

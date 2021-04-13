@@ -1,3 +1,4 @@
+@import "../../styles.scss";
 .login-box{
   width: 100%;
   height: 100%;
@@ -7,6 +8,20 @@
   .form-signin{
     width: 300px;
     height: fit-content;
+    a{
+      color: rgba(0, 102, 255, 0.475);
+      font-size: 16px;
+      text-decoration: none;
+    }
+  }
+  button.Submit{
+    background-color: $colorYellow;
+    border: none;
+  }
+  button.mt-3{
+    text-decoration: none;
+    color: rgba(0, 102, 255, 0.475);
+    font-size: 16px;
   }
 }
 

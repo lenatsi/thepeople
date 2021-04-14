@@ -1,3 +1,7 @@
+
+import { PostEditComponent } from './dashboard/postsEdit/postEdit.component';
+import { PostDetailComponent } from './dashboard/postsDetail/postDetail.component';
+import { HomeComponent } from './dashboard/home/home.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
@@ -52,6 +56,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotifierModule } from 'angular-notifier';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SettingsComponent } from './dashboard/settings/settings.component';
 
 
 @NgModule({
@@ -66,7 +72,12 @@ import { NotifierModule } from 'angular-notifier';
     FilterPipe,
     PostsComponent,
       LoginComponent,
-      RegisterComponent
+      RegisterComponent,
+      DashboardComponent,
+      HomeComponent,
+      PostDetailComponent,
+      PostEditComponent,
+      SettingsComponent
    ],
   imports: [
     BrowserModule,

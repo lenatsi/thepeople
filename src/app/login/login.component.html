@@ -3,7 +3,7 @@
       <img class="mb-4" src="../../assets/img/thepeople.svg" alt="">
       <form [formGroup]="mForm" (ngSubmit)="onSave()" class="row g-2 needs-validation" novalidate>
           <div class="form-floating">
-              <input type="email" class="form-control" formControlName= "email" formControlName="email" [ngClass]="{'is-invalid': isSend && f.email.errors}" placeholder="Correo electrónico">
+              <input type="email" class="form-control" id="floatingInput" formControlName="email" [ngClass]="{'is-invalid': isSend && f.email.errors}" placeholder="Correo electrónico">
               <label for="floatingInput">Email</label>
               <div class="invalid-feedback">
                 Introduce un email válido

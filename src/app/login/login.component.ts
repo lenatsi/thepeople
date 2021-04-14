@@ -38,8 +38,9 @@ export class LoginComponent implements OnInit {
 
     console.log("El formulario es válido");
     // Atacar a API
-
     this.notifierService.notify('success', "Datos actualizados")
+     //200
+     this.router.navigate(["/dashboard"])
 
   }
   signup() {

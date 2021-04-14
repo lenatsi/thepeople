@@ -1,53 +1,27 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
-import { Person } from '../models/person.model';
+import { Person } from 'src/app/models/person.model';
+
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class SearchComponent implements OnInit {
-  allPersons: Array<Person> = []
-  name: string = ""
-  nameSearch: string = ""
-  dateStartSearch: string = ""
-  dateEndSearch: string = ""
-
-  constructor(private activeRoute: ActivatedRoute, private router:Router) { }
-
-
-  ngOnInit() {
-
-    this.activeRoute.queryParams.subscribe( value => {
-      if(value.name != undefined) {
-        this.nameSearch = value.name
-      }
-
-      console.log(value)
-    })
-
+export class HomeComponent implements OnInit {
+ allPersons: Array<Person> =[]
+  constructor(private router: Router) {
     this.loadData()
   }
 
-  onSearchChange(searchValue: any) {
-    console.log(searchValue.target.value);
+  ngOnInit() {
   }
-
-  startChange(data:any){
-    let mDate = moment(data.value).format("DD/MM/YYYY")
-    this.dateStartSearch = mDate
+  addNew(){
+    this.router.navigate(["dashboard/postsedit"])
   }
-
-  endChange(data:any){
-    if(data.value != null){
-      let mDate = moment(data.value).format("DD/MM/YYYY")
-      this.dateEndSearch = mDate
-      this.router.navigate(["/search"], {queryParams: {name:this.name, start: this.dateStartSearch, end:this.dateEndSearch}})
-    }
-
+  editPerson(id: string){
+    this.router.navigate(["dashboard/postsedit/"+id+"/edit"])
   }
-
   loadData() {
     this.allPersons = [
       {
@@ -149,18 +123,3 @@ export class SearchComponent implements OnInit {
     ]
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

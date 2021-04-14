@@ -42,10 +42,10 @@ export class RegisterComponent implements OnInit {
     if (this.mForm === undefined || this.password.value === '' || this.passwordRepeat.value === '') {
       return null;
     } else if (this.password.value === this.passwordRepeat.value) {
-      if (name === 'password1' && this.passwordRepeat.hasError('passwordMismatch')) {
+      if (name === 'password' && this.passwordRepeat.hasError('passwordMismatch')) {
         this.password.setErrors(null);
         this.passwordRepeat.updateValueAndValidity();
-      } else if (name === 'password2' && this.password.hasError('passwordMismatch')) {
+      } else if (name === 'passwordRepeat' && this.password.hasError('passwordMismatch')) {
         this.passwordRepeat.setErrors(null);
         this.password.updateValueAndValidity();
       }

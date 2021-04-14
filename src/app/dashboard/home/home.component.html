@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row justify-content-end">
+      <button type="button" (click)="addNew()" class="btn btn-primary">Añadir nuevo</button>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Foto</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Profesion</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of allPersons">
+        <td><img src={{item.photo}}></td>
+        <td>{{item.name}}</td>
+        <td>{{item.job}}</td>
+        <td>
+          <button type="button" class="btn btn-outline-success" (click)="editPerson(item.id)">Editar</button>
+          <button type="button" class="btn btn-outline-danger">Eliminar</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+

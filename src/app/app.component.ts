@@ -1,4 +1,7 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
+import * as moment from 'moment';
+import 'moment/locale/es';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,5 +12,8 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
   title = 'thepeople';
   search= faSearch;
-  
+
+  constructor(private router: Router){
+    moment.locale('es')
+  }
 }

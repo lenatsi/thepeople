@@ -11,7 +11,7 @@
         <div class="row second-row">
           <mat-form-field class="example-full-width">
             <mat-label></mat-label>
-            <input matInput placeholder="Nombre o apellido" [value]="nameSearch">
+            <input matInput placeholder="Nombre o apellido" (input)="onSearchChange($event)" [value]="nameSearch">
         </mat-form-field>
         </div>
       </div>
@@ -44,7 +44,7 @@
                 <div class="box-img" [ngStyle]="{'background-image': 'url('+item.photo+')' }"></div>
                 <div class="box-data">
                     <h2>{{item.name}}</h2>
-                    <p class="date">{{item.birthdate}}</p>
+                    <p class="birthdate">{{item.birthdate}}</p>
                     <p class="ptag">{{item.job}}</p>
                 </div>
             </a>

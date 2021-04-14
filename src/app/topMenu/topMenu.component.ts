@@ -23,7 +23,7 @@ export class TopMenuComponent implements OnInit {
     })
     this.router.events.subscribe( route => {
       if (route instanceof NavigationEnd){
-        if(route.url !== "/login" && route.url !== "/register"){
+        if(route.url !== "/login" && route.url !== "/register" && route.url !== "/dashboard" &&route.url !== "/dashboard/dashboardhome" && route.url !== "/dashboard/postsedit" && route.url !== "/dashboard/settings" && route.url !== "/dashboard/postsedit/:id/edit") {
           this.visible =false
         } else{
           this.visible = true

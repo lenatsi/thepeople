@@ -8,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activeRoute: ActivatedRoute) {
+    this.activeRoute.params.subscribe( parm => {
+      console.log(parm.id)
+
+      //Llamada API
+    })
+  }
 
   ngOnInit() {
 

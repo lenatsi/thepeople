@@ -1,3 +1,4 @@
+import { AuthGuardService } from './services/auth/auth-guard.service';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './notFound/notFound.component';
@@ -25,9 +26,9 @@ const routes: Routes = [
       { path: "", redirectTo: "dashboardhome", pathMatch: "full" },
       { path: "dashboardhome", component: HomeComponent },
       { path: "postsedit", component: PostEditComponent },
-      { path: "postsedit/:id/edit", component: PostDetailComponent },
+      { path: "postsedit/:id/edit", component: PostEditComponent },
       { path: "settings", component: SettingsComponent }
-    ]
+    ],canActivate: [AuthGuardService],
   },
   {path: "**", redirectTo: "/404"},
 ];

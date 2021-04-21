@@ -1,3 +1,5 @@
+import { UserService } from './../services/user/user.service';
+import { User } from './../models/user.model';
 import { Router } from '@angular/router'
 import { Component, OnInit } from '@angular/core'
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
@@ -11,11 +13,15 @@ import { NotifierService } from 'angular-notifier'
 export class RegisterComponent implements OnInit {
   mForm: FormGroup
   isSend = false
+  email = ''
+  Newpassword = ''
+  name = ''
 
   constructor(
     private router: Router,
     private fb: FormBuilder,
     private notifierService: NotifierService,
+    private userService: UserService,
   ) {
     this.mForm = this.fb.group({
       password: ['', [Validators.required, Validators.minLength(6)], (control) => this.validatePasswords(control, 'password') ],
@@ -60,7 +66,7 @@ export class RegisterComponent implements OnInit {
 
   onSave() {
     this.isSend = true
-    console.log('Guardar!!', this.mForm)
+    //console.log('Guardar!!', this.mForm)
 
     if (this.mForm.invalid) {
       console.error('El formulario NO es válido')
@@ -69,7 +75,17 @@ export class RegisterComponent implements OnInit {
 
     console.log('El formulario es válido')
     // Atacar a API
-
+    const user: User = new User()
+    user.email = this.f.email.value
+    user.password = this.f.password.value
+    this.userService.signup(user).subscribe(
+      (data) => {
+        this.router.navigate(['/login'])
+      },
+      (error) => {
+        console.log('Error:', error)
+      },
+    )
     this.notifierService.notify('success', 'Datos actualizados')
   }
 

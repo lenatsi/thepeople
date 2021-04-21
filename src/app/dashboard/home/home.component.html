@@ -1,6 +1,31 @@
 <div class="container">
   <div class="row justify-content-end">
-      <button type="button" (click)="addNew()" class="btn btn-primary">Añadir nuevo</button>
+    <button type="button" (click)="addNew()" class="btn btn-primary">
+      Añadir nuevo
+    </button>
+    <button
+      type="button"
+
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop">
+      Cerrar sesion
+    </button>
+
+    <div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Cerrar sesión</h5>
+            <button type="button"class="btn-close"data-bs-dismiss="modal"aria-label="Close"></button>
+          </div>
+          <div class="modal-body">¿Estas seguro de querer cerrar sesión?</div>
+          <div class="modal-footer">
+            <button type="button"class="btn btn-secondary"data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" (click)="logOut()">Cerrar sesión</button>
+        </div>
+      </div>
+    </div>
   </div>
   <table class="table table-hover">
     <thead>
@@ -12,17 +37,21 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of allPersons">
-        <td><img src={{item.photo}}></td>
-        <td>{{item.name}}</td>
-        <td>{{item.job}}</td>
+      <tr *ngFor="let item of personajes">
+        <td><img src="{{ item.photo }}" /></td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.profession }}</td>
         <td>
-          <button type="button" class="btn btn-outline-success" (click)="editPerson(item.id)">Editar</button>
-          <button type="button" class="btn btn-outline-danger">Eliminar</button>
+          <button
+            type="button"
+            class="btn btn-outline-success"
+            (click)="editPerson(item._id)"
+          >
+            Editar
+          </button>
+          <button type="button" (click)="deletePerson(item._id)" class="btn btn-outline-danger">Eliminar</button>
         </td>
       </tr>
-
     </tbody>
   </table>
 </div>
-

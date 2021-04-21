@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
   fasearch= faSearch;
+  
   constructor(private router: Router) { }
 
   ngOnInit() {

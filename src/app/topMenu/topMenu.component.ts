@@ -23,13 +23,15 @@ export class TopMenuComponent implements OnInit {
     })
     this.router.events.subscribe( route => {
       if (route instanceof NavigationEnd){
-        if(route.url !== "/login" && route.url !== "/register" && route.url !== "/dashboard" &&route.url !== "/dashboard/dashboardhome" && route.url !== "/dashboard/postsedit" && route.url !== "/dashboard/settings" && route.url !== "/dashboard/postsedit/:id/edit") {
-          this.visible =false
+        if(route.url == "/login" || route.url == "/register" || route.url == "/dashboard" || route.url == "/dashboard/dashboardhome" || route.url == "/dashboard/postsedit" || route.url == "/dashboard/settings" || route.url.includes('dashboard')) {
+          this.visible =true
         } else{
-          this.visible = true
+          this.visible = false
         }
       }
     })
   }
+  //para el boton si estoy logueado que me mande ya al dashboard
+  
 
 }

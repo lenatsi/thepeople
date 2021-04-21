@@ -76,8 +76,20 @@
         color: #ffb500;
       }
     }
-    .box-img {
-      margin-bottom: -21px;
+
+  }
+  .box-img {
+    transition: all 0.2s ease;
+    height: 200px;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: -16px;
+    overflow: hidden;
+    text-align: center;
+    align-items: center;
+    img{
+      width: auto;
+      height: 100%;
     }
   }
   .box-data {
@@ -111,13 +123,5 @@
       font-size: 14px;
     }
   }
-  .box-img {
-    transition: all 0.2s ease;
-    background-position: center center;
-    background-size: cover;
-    height: 200px;
-    border-radius: 8px;
-    position: relative;
-    margin-bottom: -16px;
-  }
+
 }

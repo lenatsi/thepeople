@@ -1,7 +1,16 @@
+@import "../../../styles.scss";
 .container{
   .row{
+    width: 100%;
     button{
       width:fit-content;
+    }
+    .BotonA{
+      margin-right: 30px;
+    }
+    .btn-primary{
+      background-color: $colorYellow;
+      border: none;
     }
   }
 }
@@ -9,5 +18,8 @@ td{
   height:60px;
   img{
     height: 100%;
+  }
+  button{
+    margin-right: 10px;
   }
 }

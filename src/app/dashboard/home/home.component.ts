@@ -1,4 +1,4 @@
-import { Person } from './../../models/person.model';
+import { Person } from 'src/app/models/person.model';
 import { PeopleService } from './../../services/people/people.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +15,8 @@ export class HomeComponent implements OnInit {
   dateStartSearch: string = ''
   dateEndSearch: string = ''
   filter = ''
-  constructor(private router: Router, private peopleService: PeopleService) {
+  person?: Person
+  constructor(private router: Router, private peopleService: PeopleService, ) {
     this.loadData()
   }
 
@@ -25,6 +26,13 @@ export class HomeComponent implements OnInit {
     this.router.navigate(["dashboard/postsedit"])
   }
   editPerson(id: string){
+   /* console.log(id)
+        this.peopleService.getPersonaje(id).subscribe(
+          (data) => {
+            console.log(data)
+            this.person = data
+          }
+        ) */
     this.router.navigate(["dashboard/postsedit/"+id+"/edit"])
   }
   logOut(){
@@ -47,12 +55,13 @@ export class HomeComponent implements OnInit {
     this.peopleService.deletePersonaje(id).subscribe(
       (data) => {
         console.log('El personaje ha sido borrado', data)
+        this.router.navigate(['dashboard'])
       },
       (error) => {
         console.log('Error:', error)
       },
 
     )
-    this.router.navigate(['dashboard'])
+
   }
 }

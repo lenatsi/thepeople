@@ -23,9 +23,10 @@
           <mat-form-field  class="picker">
             <mat-label></mat-label>
             <mat-date-range-input [rangePicker]="picker">
-              <input matStartDate (dateChange)="startChange($event)" placeholder="Fecha inicio" name="filterDate">
-              <input matEndDate (dateChange)="endChange($event)"placeholder="Fecha fin">
+              <input matStartDate [(ngModel)]='startInput' (dateChange)="startChange($event)" placeholder="Fecha inicio" name="filterDate">
+              <input matEndDate [(ngModel)]='endInput' (dateChange)="endChange($event)"placeholder="Fecha fin">
             </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"><mat-icon matDatepickerToggleIcon (click)="clearDate($event)">clear</mat-icon></mat-datepicker-toggle>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-date-range-picker #picker></mat-date-range-picker>
           </mat-form-field>

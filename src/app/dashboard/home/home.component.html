@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row justify-content-end">
-    <button type="button" (click)="addNew()" class="btn btn-primary">
+    <button type="button" (click)="addNew()" class="btn btn-primary BotonA">
       Añadir nuevo
     </button>
+
     <button
       type="button"
 
@@ -32,6 +33,7 @@
       <tr>
         <th scope="col">Foto</th>
         <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
         <th scope="col">Profesion</th>
         <th scope="col">Acciones</th>
       </tr>
@@ -40,6 +42,7 @@
       <tr *ngFor="let item of personajes">
         <td><img src="{{ item.photo }}" /></td>
         <td>{{ item.name }}</td>
+        <td>{{item.surname}}</td>
         <td>{{ item.profession }}</td>
         <td>
           <button
@@ -49,7 +52,24 @@
           >
             Editar
           </button>
-          <button type="button" (click)="deletePerson(item._id)" class="btn btn-outline-danger">Eliminar</button>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-danger">Eliminar</button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Vas a eliminar a este personaje</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ¿Estas seguro de querer eliminar a este personaje? Se eliminará de la base de datos y no se podrá recuperar.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary" (click)="deletePerson(item._id)">Sí, quiero eliminar</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </td>
       </tr>
     </tbody>

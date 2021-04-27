@@ -17,6 +17,8 @@ export class SearchComponent implements OnInit {
   filtro = ''
   personajes: Array<Person> = []
   filter:string = ''
+  startInput =''
+  endInput = ''
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -29,11 +31,16 @@ export class SearchComponent implements OnInit {
       if (value.name != undefined) {
         this.filter = value.name
       }
-      this.filtro = value.name
-      console.log(value)
-      console.log(this.filtro)
-
     })
+    this.loadData()
+  }
+
+  clearDate(event) {
+    event.stopPropagation();
+    this.dateStartSearch = null;
+    this.dateEndSearch = null;
+    this.startInput = undefined
+    this.endInput = undefined
     this.loadData()
   }
 

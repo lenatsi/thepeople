@@ -70,9 +70,15 @@
     }
     .rightItem {
       width: 55%;
+      height: 600px;
+      background-image: url('../../assets/img/ada-lovelace.jpeg') ;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: 25px;
       img {
-        max-width: 100%;
-        max-height: 635px;
+        height: 635px;
+        width: 635px;
       }
     }
   }

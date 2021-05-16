@@ -7,3 +7,4 @@ export class Person {
   profession: string
   _id: string
 }
+
